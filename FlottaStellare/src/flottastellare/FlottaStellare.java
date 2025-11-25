@@ -19,20 +19,37 @@ public class FlottaStellare {
         
         ArrayList<Astronave> navi = new ArrayList<>();
         
-        Modulo modulo1 = new Modulo("motore", 100);
-        Astronave nave1 = new Astronave("nave1");
-        Membro membro1 = new Membro("Federico", "Medico", 10, nave1);
+        FlottaDiNavi adeptusmechanicus = new FlottaDiNavi("adeptusmechanicus" ,navi);
         
-        FlottaDiNavi flotta1 = new FlottaDiNavi("flotta1",  navi);
-        flotta1.aggiungiAstronave(nave1);
-        flotta1.cercaAstronave(nave1);
+        Astronave arkmechanicus = new Astronave("arkmechanicus");
+        Astronave mechanicuscruiser = new Astronave("mechanicuscruiser");
+        Astronave lathecruiser = new Astronave("lathecruiser");
         
-        nave1.aggiungiModulo(modulo1);
-        nave1.aggiungiMembro(membro1);
+        Modulo scudi = new Modulo("scudo", 200);
+        Modulo ponteDiBordo = new Modulo("ponteDiBordo", 50);
+        Modulo motore = new Modulo("motore", 100);
         
-        System.out.println(modulo1);
-        System.out.println(membro1);
-        System.out.println(nave1);
+        adeptusmechanicus.aggiungiAstronave(arkmechanicus);
+        adeptusmechanicus.aggiungiAstronave(mechanicuscruiser);
+        adeptusmechanicus.aggiungiAstronave(lathecruiser);
+       
+        arkmechanicus.aggiungiModulo(scudi);
+        mechanicuscruiser.aggiungiModulo(ponteDiBordo);
+        lathecruiser.aggiungiModulo(motore);
+        
+        Membro ludovico = new Membro("Ludovico", "capitano", 10, arkmechanicus );
+        
+        System.out.println(scudi);
+        System.out.println(ponteDiBordo);
+        System.out.println(motore);
+        System.out.println(arkmechanicus);
+        System.out.println(mechanicuscruiser);
+        System.out.println(lathecruiser);
+        System.out.println(ludovico);
+        
+        adeptusmechanicus.simulaEventoCasuale();
+        
+        System.out.println();
     }
     
 }

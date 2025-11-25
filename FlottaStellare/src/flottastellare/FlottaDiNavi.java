@@ -44,7 +44,6 @@ public class FlottaDiNavi {
             return;
         }
         
-
         Astronave naveScelta = navi.get(rdn.nextInt(navi.size()));
         int tipoEvento = rdn.nextInt(4);
         
@@ -86,6 +85,7 @@ public class FlottaDiNavi {
                 System.out.println("RISULTATO: Cura su Membro " + e.getNome() + " (+" + cura + ")");
                 e.cura(cura);
                 break;
+            
         }
         System.out.println("Stato Aggiornato: " + naveScelta.visualizzaStatoIntegrita());
     }
